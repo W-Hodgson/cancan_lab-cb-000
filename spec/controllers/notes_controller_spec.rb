@@ -7,12 +7,6 @@ RSpec.describe NotesController, type: :controller do
     @content = 'secret message'
   end
   describe "Notes#create" do
-    describe "when a user is not logged in" do
-      it "returns unauthorized" do
-        post :create, params: { note: { content: @content} }
-        expect(response).to be_unauthorized
-      end
-    end
 
     describe "when a user is logged in" do
       it "redirects to / after creation" do
